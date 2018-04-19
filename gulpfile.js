@@ -27,6 +27,18 @@ gulp.task('vendor', function() {
     ])
     .pipe(gulp.dest('./vendor/bootstrap'))
 
+  // Devicons
+  gulp.src([
+      './node_modules/devicons/**/*',
+      '!./node_modules/devicons/*.json',
+      '!./node_modules/devicons/*.md',
+      '!./node_modules/devicons/!PNG',
+      '!./node_modules/devicons/!PNG/**/*',
+      '!./node_modules/devicons/!SVG',
+      '!./node_modules/devicons/!SVG/**/*'
+    ])
+    .pipe(gulp.dest('./vendor/devicons'))
+
   // Font Awesome
   gulp.src([
       './node_modules/font-awesome/**/*',
@@ -50,11 +62,16 @@ gulp.task('vendor', function() {
     ])
     .pipe(gulp.dest('./vendor/jquery-easing'))
 
-  // Vide.js
+  // Simple Line Icons
   gulp.src([
-      './node_modules/vide/dist/*'
+      './node_modules/simple-line-icons/fonts/**',
     ])
-    .pipe(gulp.dest('./vendor/vide'))
+    .pipe(gulp.dest('./vendor/simple-line-icons/fonts'))
+
+  gulp.src([
+      './node_modules/simple-line-icons/css/**',
+    ])
+    .pipe(gulp.dest('./vendor/simple-line-icons/css'))
 
 });
 
